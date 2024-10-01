@@ -1,2 +1,2 @@
-# configs
-A repo containing my configs
+# Configs
+A repo containing my configs for tools in my workspaces
