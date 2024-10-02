@@ -12,6 +12,7 @@ return {
       -- See Configuration section for rest
     },
     config = function()
+      require('CopilotChat')
       -- set keymaps
       local keymap = vim.keymap -- for conciseness
 

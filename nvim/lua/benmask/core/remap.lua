@@ -13,6 +13,11 @@ vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split the window verticall
 vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split the window horizontally" })
 vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make the splits equla size" })
 vim.keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close the current split" })
+-- resize current window
+vim.keymap.set("n", "=", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
+vim.keymap.set("n", "-", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically
+vim.keymap.set("n", "+", [[<cmd>horizontal resize +2<cr>]]) -- make the window bigger horizontally by pressing shift and =
+vim.keymap.set("n", "_", [[<cmd>horizontal resize -2<cr>]]) -- make the window smaller horizontally by pressing shift and -
 
 vim.keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
 vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
