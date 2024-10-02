@@ -28,3 +28,9 @@ vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current bu
 -- terminal emulator
 vim.keymap.set("t", "jk", "<C-\\><C-n>", { desc = "Put terminal emulator into normal mode" })
 vim.keymap.set("n", "<leader>ty", ":split | terminal<CR>", { desc = "Create a new terminal below" })
+
+
+-- vi mode mgmgt
+-- switch to visual mode w vm
+vim.keymap.set("n", "<leader>vi", "v", { desc = "Switch to visual mode" })
+vim.keymap.set("v", "<leader>vi", "<ESC>", { desc = "Switch to normal mode" })
