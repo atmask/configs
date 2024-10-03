@@ -38,22 +38,21 @@ return {
         "gopls",
         "golangci_lint_ls",
         "jsonls",
-        "ast_grep",
         "yamlls",
-        "pylsp",
+        "pyright",
       },
     })
 
-    mason_tool_installer.setup({
-      ensure_installed = {
-        "prettier", -- prettier formatter
-        "stylua", -- lua formatter
-        "isort", -- python formatter
-        "black", -- python formatter
-        "pylint",
-        "eslint_d",
-        "golangci-lint",
-      },
-    })
+--    mason_tool_installer.setup({
+--      ensure_installed = {
+--        "prettier", -- prettier formatter
+--        "stylua", -- lua formatter
+--        "isort", -- python formatter
+--        "black", -- python formatter
+--        "pylint",
+--        "eslint_d",
+--        "golangci-lint",
+--      },
+--    })
   end,
 }

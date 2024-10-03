@@ -12,7 +12,10 @@ return {
       -- See Configuration section for rest
     },
     config = function()
-      require('CopilotChat')
+      require("CopilotChat").setup {
+        debug = true, -- Enable debugging
+      }
+
       -- set keymaps
       local keymap = vim.keymap -- for conciseness
 
@@ -20,6 +23,11 @@ return {
       keymap.set("n", "<leader>ct", "<cmd>CopilotChatTests<cr>", { desc = "Generate Tests" })
       keymap.set("n", "<leader>ce", "<cmd>CopilotChatExplain<cr>", { desc = "Explain the selected code" })
       keymap.set("n", "<leader>cd", "<cmd>CopilotChatDocs<cr>", { desc = "Generate docs for the selected code" })
+      keymap.set("v", "<leader>ct", "<cmd>CopilotChatTests<cr>", { desc = "Generate Tests" })
+      keymap.set("v", "<leader>ce", "<cmd>CopilotChatExplain<cr>", { desc = "Explain the selected code" })
+      keymap.set("v", "<leader>cd", "<cmd>CopilotChatDocs<cr>", { desc = "Generate docs for the selected code" })
+
+
     end,
     -- See Commands section for default commands if you want to lazy load on them
   },

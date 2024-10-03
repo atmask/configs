@@ -36,4 +36,25 @@ opt.clipboard:append("unnamedplus") -- use sys clipboard as dflt register
 -- split windows
 opt.splitright = true
 opt.splitbelow = true
+opt.laststatus = 3
+
+-- Autoreload for files
+
+-- Enable auto-reload when files are changed externally
+vim.opt.autoread = true
+
+-- Check for file changes when switching back to Neovim
+vim.api.nvim_create_autocmd({"FocusGained", "BufEnter"}, {
+  pattern = "*",
+  command = "checktime"
+})
+
+-- Notify the user when the file is reloaded
+vim.api.nvim_create_autocmd("FileChangedShellPost", {
+  pattern = "*",
+  callback = function()
+    vim.cmd('echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None')
+  end
+})
+
 

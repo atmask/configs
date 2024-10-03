@@ -31,6 +31,6 @@ vim.keymap.set("n", "<leader>ty", ":split | terminal<CR>", { desc = "Create a ne
 
 
 -- vi mode mgmgt
--- switch to visual mode w vm
-vim.keymap.set("n", "<leader>vi", "v", { desc = "Switch to visual mode" })
+-- switch to visual block mode with leader vi
+vim.keymap.set("n", "<leader>vi", "<c-v>", { desc = "Switch to visual block mode" })
 vim.keymap.set("v", "<leader>vi", "<ESC>", { desc = "Switch to normal mode" })
