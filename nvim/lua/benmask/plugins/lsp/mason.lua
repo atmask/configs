@@ -38,7 +38,7 @@ return {
         "gopls",
         "golangci_lint_ls",
         "jsonls",
-        "yamlls",
+        "helm_ls",
         "pyright",
       },
     })

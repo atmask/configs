@@ -25,6 +25,12 @@ opt.cursorline = true
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes" -- show sign col so that test does not shift
+opt.shell = "/bin/bash -l" -- use bash as shell
+-- Automatically enter insert mode when opening a terminal
+vim.api.nvim_create_autocmd("TermOpen", {
+  pattern = "*",
+  command = "startinsert"
+})
 
 -- backspace
 opt.backspace = "indent,eol,start" --allow backspace on indent, eol, or insert mode start position
@@ -56,5 +62,4 @@ vim.api.nvim_create_autocmd("FileChangedShellPost", {
     vim.cmd('echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None')
   end
 })
-
 
