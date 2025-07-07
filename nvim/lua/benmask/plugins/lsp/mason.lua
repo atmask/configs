@@ -1,7 +1,9 @@
+-- use mason as my lsp manager
 return {
   "williamboman/mason.nvim",
+  version = "1.11.0",
   dependencies = {
-    "williamboman/mason-lspconfig.nvim",
+    { "williamboman/mason-lspconfig.nvim", version = "1.32.0" },
     "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
   config = function()
@@ -27,32 +29,26 @@ return {
     mason_lspconfig.setup({
       -- list of servers for mason to install
       ensure_installed = {
+        "ts_ls",
         "html",
         "cssls",
-        "tailwindcss",
-        "svelte",
         "lua_ls",
-        "ansiblels",
-        "bashls",
-        "dockerls",
-        "gopls",
-        "golangci_lint_ls",
-        "jsonls",
-        "helm_ls",
+        "graphql",
         "pyright",
+        "gopls",
+        "rust_analyzer",
       },
     })
 
---    mason_tool_installer.setup({
---      ensure_installed = {
---        "prettier", -- prettier formatter
---        "stylua", -- lua formatter
---        "isort", -- python formatter
---        "black", -- python formatter
---        "pylint",
---        "eslint_d",
---        "golangci-lint",
---      },
---    })
+    mason_tool_installer.setup({
+      ensure_installed = {
+        "prettier", -- prettier formatter
+        "stylua", -- lua formatter
+        "isort", -- python formatter
+        "black", -- python formatter
+        "pylint",
+        "eslint_d",
+      },
+    })
   end,
 }

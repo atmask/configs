@@ -11,14 +11,13 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({ {import = "benmask.plugins" }, { import = "benmask.plugins.lsp" } }) 
+require("lazy").setup({ { import = "benmask.plugins" }, { import = "benmask.plugins.lsp"} }, {
+  checker = { -- check for plugin updates
+    enabled = true,
+    notify = false,
+  },
+  change_detection = { -- disable the change notifications when editing plugins
+    notify = false,
+  },
+})
 
---, { import = "josean.plugins.lsp" } }, {
---  checker = {
---    enabled = true,
---    notify = false,
---  },
---  change_detection = {
---    notify = false,
---  },
---})

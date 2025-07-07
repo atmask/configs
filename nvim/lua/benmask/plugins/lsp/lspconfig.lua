@@ -18,6 +18,7 @@ return {
 
     local keymap = vim.keymap -- for conciseness
 
+    -- This gets run when lsp attaches to a buffer
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("UserLspConfig", {}),
       callback = function(ev)
@@ -27,8 +28,7 @@ return {
 
         -- set keybinds
         opts.desc = "Show LSP references"
-        keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
-
+        keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references 
         opts.desc = "Go to declaration"
         keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
 
@@ -78,26 +78,11 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-    mason_lspconfig.setup_handlers({
+    mason_lspconfig.setup({handlers = { -- mason_lspconfig.setup_handlers doesn't exist but mason_lspconfig.setup({handlers = {}}) exists
       -- default handler for installed servers
       function(server_name)
         lspconfig[server_name].setup({
           capabilities = capabilities,
-        })
-      end,
-      ["svelte"] = function()
-        -- configure svelte server
-        lspconfig["svelte"].setup({
-          capabilities = capabilities,
-          on_attach = function(client, bufnr)
-            vim.api.nvim_create_autocmd("BufWritePost", {
-              pattern = { "*.js", "*.ts" },
-              callback = function(ctx)
-                -- Here use ctx.match instead of ctx.file
-                client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
-              end,
-            })
-          end,
         })
       end,
       ["graphql"] = function()
@@ -124,22 +109,7 @@ return {
           },
         })
       end,
-      ["pyright"] = function()
-        -- configure pyright lsp server
-        lspconfig["pyright"].setup({
-          capabilities = capabilities,
-          settings = {
-            python = {
-              analysis = {
-                autoSearchPaths = true,
-                useLibraryCodeForTypes = true,
-                typeCheckingMode = "off",
-              },
-            },
-          },
-        })
-      end,
-    })
+    }})
   end,
 }
 
