@@ -2,6 +2,17 @@
 
 A repo containing my configs for tools in my workspaces
 
+## Installation
+
+To install on a new machine:
+
+```bash
+git clone git@github.com:atmask/configs.git
+
+ln -s ./configs/nvim ~/.config/nvim
+ln -s ./configs/kitty ~/.config/kitty
+```
+
 ## Nvim
 
 My nvim configurations. There are a couple of dependencies that need to be installed before using this configuration.
