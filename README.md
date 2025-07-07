@@ -20,6 +20,6 @@ Configs are also included for the kitty terminal emulator
 
 ## Keymaps
 
-`<C-o>`: Forward through telescope history
-`<C-i>`: Backward through telescope history
-`SPC+fr`: To see recent telescope files
+`<C-o>`: Forward through telescope history \
+`<C-i>`: Backward through telescope history \
+`SPC+fr`: To see recent telescope files \
