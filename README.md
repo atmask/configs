@@ -29,8 +29,51 @@ My nvim configurations. There are a couple of dependencies that need to be insta
 
 Configs are also included for the kitty terminal emulator
 
-## Keymaps
+# Keymaps
+
+## NVim
+
+**Explorer**
+
+- `spc + ee`: Toggle File Explorer
+- `spc + ef`: Open file Explorer at current file
+- `spc + er`: Refresh File Explorer
+
+**Search (Telescope)**
+
+- `spc + ff`: Find file
+- `spc + fs`: Find string
+- `spc + fc`: Find string under cursor
+- `spc + fr`: Search in recent files
+- `spc + ft`: Find TODOs / Anchor comments (e.g. BUG, HACK, TODO)
+
+**Navigation**
 
 - `<C-o>`: Forward through telescope history
 - `<C-i>`: Backward through telescope history
-- `SPC+fr`: To see recent telescope files
+
+**Tabs**
+
+- `spc + to`: Open new tab
+- `spc + tx`: Close tab
+- `spc + tn`: Next tab
+- `spc + tp`: Previous tab
+- `spc + tf`: Open current buffer in new tab
+
+**Splits**
+
+- `spc + sh`: Split horizontal
+- `spc + sv`: Split vertical
+- `spc + sm`: Toggle maximize split
+- `spc + sx`: Close split
+- `spc + se`: Make splits equal
+
+## Kitty
+
+- `cmd+t`: New tab
+- `cmd+w`: Close tab
+- `cmd+^+[`: Previous Tab
+- `cmd+^+]`: Next tab
+- `cmd+^+i`: Rename tab
+- `ctrl+^+,`: Move tab left
+- `ctrl+^+.`: Move tab right
