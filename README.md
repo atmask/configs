@@ -11,6 +11,16 @@ git clone git@github.com:atmask/configs.git
 
 ln -s ./configs/nvim ~/.config/nvim
 ln -s ./configs/kitty ~/.config/kitty
+ln -s ./configs/starship.toml ~/.config/starship.toml
+```
+
+## Starship
+
+Starship is customizable terminal prompt. To ensure it runs when the session starts you
+should have the following in your profile or bashrc:
+
+```bash
+eval "$(starship init bash)"
 ```
 
 ## Nvim
