@@ -22,6 +22,17 @@ return {
           },
         },
       },
+      pickers = {
+        find_files = {
+          hidden = true,
+          no_ignore = false,
+        },
+        live_grep = {
+          additional_args = function()
+            return { "--hidden" }
+          end,
+        },
+      },
     })
 
     telescope.load_extension("fzf")
