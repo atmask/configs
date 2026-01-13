@@ -6,8 +6,18 @@ return {
     vim.o.timeoutlen = 500
   end,
   opts = {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
+    preset = "modern",
+    spec = {
+      -- LSP related groups
+      { "g", group = "goto" },
+      { "<leader>c", group = "code" },
+      { "<leader>d", group = "diagnostics" },
+      { "<leader>r", group = "refactor" },
+      { "<leader>f", group = "find" },
+      { "<leader>w", group = "workspace/session" },
+      { "<leader>e", group = "explorer" },
+      { "[", group = "previous" },
+      { "]", group = "next" },
+    },
   },
 }
