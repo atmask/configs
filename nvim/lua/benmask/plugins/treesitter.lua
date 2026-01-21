@@ -9,6 +9,10 @@ return {
     -- import nvim-treesitter plugin
     local treesitter = require("nvim-treesitter.configs")
 
+    -- Register terraform language for terraform-vars filetype
+    -- This ensures that .tfvars files get proper syntax highlighting
+    vim.treesitter.language.register('terraform', { 'terraform', 'terraform-vars' })
+
     -- configure treesitter
     treesitter.setup({ -- enable syntax highlighting
       highlight = {
@@ -43,6 +47,7 @@ return {
         "go",
         "python",
         "rust",
+        "terraform",
       },
       incremental_selection = {
         enable = true,
