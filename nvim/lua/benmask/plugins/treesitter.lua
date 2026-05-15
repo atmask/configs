@@ -1,6 +1,7 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   event = { "BufReadPre", "BufNewFile" },
+  branch = "master",
   build = ":TSUpdate",
   dependencies = {
     "windwp/nvim-ts-autotag",
@@ -11,7 +12,7 @@ return {
 
     -- Register terraform language for terraform-vars filetype
     -- This ensures that .tfvars files get proper syntax highlighting
-    vim.treesitter.language.register('terraform', { 'terraform', 'terraform-vars' })
+    vim.treesitter.language.register("terraform", { "terraform", "terraform-vars" })
 
     -- configure treesitter
     treesitter.setup({ -- enable syntax highlighting
