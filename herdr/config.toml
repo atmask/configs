@@ -1,0 +1,9 @@
+onboarding = false
+
+[keys]
+prefix = "ctrl+a"
+next_workspace = "ctrl+shift+j"
+previous_workspace = "ctrl+shift+k"
+
+[ui]
+agent_panel_scope = "all"
