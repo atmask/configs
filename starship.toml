@@ -211,3 +211,12 @@ format = '\[[$symbol($version)]($style)\]'
 
 [solidity]
 format = '\[[$symbol($version)]($style)\]'
+
+[custom.jj]
+description = "Jujutsu change id, bookmarks and state for the working copy"
+when = "jj --ignore-working-copy root"
+command = '''jj log --ignore-working-copy --no-graph --color never -r @ -T 'separate(" ", change_id.shortest(4), bookmarks, if(conflict, "conflict"), if(divergent, "divergent"), if(empty, "(empty)"))' '''
+shell = ["sh"]
+symbol = "🥋 "
+style = "purple"
+format = '\[[$symbol$output]($style)\]'
