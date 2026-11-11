@@ -5,5 +5,10 @@ prefix = "ctrl+a"
 next_workspace = "ctrl+shift+j"
 previous_workspace = "ctrl+shift+k"
 
+[[keys.command]]
+key = "prefix+f"
+type = "shell"
+command = "$HOME/.config/herdr/bin/fork-claude.sh"
+
 [ui]
 agent_panel_scope = "all"
